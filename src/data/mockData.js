@@ -145,6 +145,24 @@ export const cityData = {
   }
 };
 
+// Função para converter data do formato "MMM DD" para objeto Date
+function parseDate(dateStr) {
+  const monthMap = {
+    'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+    'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
+  };
+  
+  const [month, day] = dateStr.split(' ');
+  const monthIndex = monthMap[month];
+  const dayNum = parseInt(day);
+  
+  // Determinar o ano correto baseado no mês
+  // Jul-Dec são de 2024, Jan-Jun são de 2025
+  const year = monthIndex >= 6 ? 2024 : 2025;
+  
+  return new Date(year, monthIndex, dayNum);
+}
+
 // Função para calcular dados unificados
 export const getUnifiedData = () => {
   const cities = Object.values(cityData);
@@ -158,7 +176,12 @@ export const getUnifiedData = () => {
     city.dailyData.forEach(day => allDates.add(day.date));
   });
   
-  const dailyData = Array.from(allDates).sort().map(date => {
+  // Ordenar datas cronologicamente
+  const sortedDates = Array.from(allDates).sort((a, b) => {
+    return parseDate(a) - parseDate(b);
+  });
+  
+  const dailyData = sortedDates.map(date => {
     const totalVisits = cities.reduce((sum, city) => {
       const dayData = city.dailyData.find(d => d.date === date);
       return sum + (dayData ? dayData.visits : 0);
