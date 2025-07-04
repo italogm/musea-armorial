@@ -4,7 +4,7 @@ Dashboard interativo para análise de dados de acesso ao Movimento Armorial 50 n
 
 ## 🚀 Aplicação Online
 
-**Acesse o dashboard em:** https://italomonteiro-nubank.github.io/musea-armorial
+**Acesse o dashboard em:** https://italogm.github.io/musea-armorial
 
 ## 📊 Funcionalidades
 
@@ -51,7 +51,7 @@ Dashboard interativo para análise de dados de acesso ao Movimento Armorial 50 n
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/italomonteiro-nubank/musea-armorial.git
+git clone https://github.com/italogm/musea-armorial.git
 cd musea-armorial
 ```
 

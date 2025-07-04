@@ -1,7 +1,7 @@
 {
   "name": "dashboard-musea",
   "version": "1.0.0",
-  "homepage": "https://italomonteiro-nubank.github.io/musea-armorial",
+  "homepage": "https://italogm.github.io/musea-armorial",
   "description": "Dashboard para análise de dados do Movimento Armorial 50",
   "main": "index.js",
   "scripts": {
@@ -13,16 +13,16 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "chart.js": "^4.4.0",
-    "lucide-react": "^0.294.0",
     "react": "^18.2.0",
-    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "styled-components": "^6.1.0"
+    "chart.js": "^4.4.0",
+    "react-chartjs-2": "^5.2.0",
+    "styled-components": "^6.1.0",
+    "lucide-react": "^0.294.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.1.1"
   },
   "browserslist": {
     "production": [
